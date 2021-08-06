@@ -1,0 +1,27 @@
+language: node_js
+sudo: required
+node_js: 12
+cache:
+  directories:
+    - node_modules
+
+branches:
+  only:
+    - hexo
+
+before_install:
+  - npm install -g hexo-cli
+
+install:
+  - npm install
+  - npm install hexo-deployer-git --save
+
+script:
+  - hexo clean
+  - hexo generate
+
+after_script:
+  - git config user.name "shiwuqi"
+  - git config user.email "liziw2012@gmail.com"
+  - sed -i'' "s~git@github.com:shiwuqi/shiwuqi.github.io.git~https://${ACCESS_TOKEN}@github.com/shiwuqi/shiwuqi.github.io.git~" _config.yml
+  - hexo deploy
