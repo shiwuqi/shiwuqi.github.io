@@ -18,7 +18,7 @@ install:
 
 script:
   - hexo clean
-  - hexo generate
+  - hexo build
 
 after_script:
   - git config user.name "shiwuqi"
