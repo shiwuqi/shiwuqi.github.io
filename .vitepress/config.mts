@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: "/shiqi",
+  base: "/",
   title: "十七的博客",
   description: "",
   themeConfig: {
