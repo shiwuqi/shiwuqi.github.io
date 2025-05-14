@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+# Add permissions for the GitHub token
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
